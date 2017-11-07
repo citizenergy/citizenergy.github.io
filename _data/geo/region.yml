@@ -1,0 +1,37 @@
+north:
+  name: 北部
+  _county:
+    - keelung_city
+    - taipei_city
+    - new_taipei_city
+    - yilan_county
+    - taoyuan_city
+    - hsinchu_city
+    - hsinchu_county
+central:
+  name: 中部
+  _county:
+    - miaoli_county
+    - taichung_city
+    - changhua_county
+    - yunlin_county
+    - nantou_county
+south:
+  name: 南部
+  _county:
+    - chiayi_city
+    - chiayi_county
+    - tainan_city
+    - kaohsiung_city
+    - pingtung_county
+east:
+  name: 東部
+  _county:
+    - hualien_county
+    - taitung_county
+island:
+  name: 離島
+  _county:
+    - penghu_county
+    - kinmen_county
+    - lienchiang_county
