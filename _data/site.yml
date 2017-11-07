@@ -1,7 +1,7 @@
 name: 民間能源轉型推動聯盟 - Citizen is Energy
 description: blah
-cover: /assets/images/cover.png
-favicon: /assets/images/
+cover: assets/images/cover.png
+favicon: assets/images/
 
 code:
   source: https://github.com/ETBlue/citizenergy

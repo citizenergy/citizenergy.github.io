@@ -6,6 +6,7 @@
 
 {% assign sitename = site.data.site.name %}
 {% assign og_url = page.url %}
+{% assign base_url = "/citizenergy" %}
 {% assign og_title = page.title %}
 {% assign og_favicon = site.data.site.favicon %}
 
@@ -27,26 +28,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ og_url }}" />
+  <meta property="og:url" content="{{ base_url }}{{ og_url }}" />
 
   <meta name="description" content="{{ og_description }}" />
   <meta property="og:description" content="{{ og_description}}" /> 
   <meta name="twitter:description" content="{{ og_description }}"/>
 
-  <meta property="og:image" content="{{ og_image }}" /> 
-  <meta name="twitter:image:src" content="{{ og_image }}" />
+  <meta property="og:image" content="{{ base_url }}/{{ og_image }}" /> 
+  <meta name="twitter:image:src" content="{{ base_url }}/{{ og_image }}" />
 
   <meta property="og:title" content="{{ og_title }} | {{ sitename }}" />
   <meta name="twitter:title" content="{{ og_title }} | {{ sitename }}" />
   <title>{{ og_title }} | {{ sitename }}</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="{{ og_favicon }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ base_url }}/{{ og_favicon }}" />
 
 <!-- 套上 css -->
 
-  <link rel="stylesheet" href="assets/vendors/semantic/semantic.min.css"/>
+  <link rel="stylesheet" href="{{ base_url }}/assets/vendors/semantic/semantic.min.css"/>
 
-  <link rel="stylesheet" href="assets/global.css"/>
+  <link rel="stylesheet" href="{{ base_url }}/assets/global.css"/>
 
   {% if page.head %}
     {% include {{ page.head }} %}
@@ -63,9 +64,9 @@
   {{ content }}
   </div>
 
-  <script src="assets/vendors/jquery-3.2.1.min.js"></script>
-  <script src="assets/vendors/semantic/semantic.min.js"></script>
-  <script src="assets/global.js"></script>
+  <script src="{{ base_url }}/assets/vendors/jquery-3.2.1.min.js"></script>
+  <script src="{{ base_url }}/assets/vendors/semantic/semantic.min.js"></script>
+  <script src="{{ base_url }}/assets/global.js"></script>
 
   {% if page.footer %}
     {% include {{ page.footer }} %}
