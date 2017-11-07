@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- 準備 og 素材 -->
+
+{% assign sitename = site.data.site.name %}
+{% assign og_url = page.url %}
+{% assign og_title = page.title %}
+{% assign og_favicon = site.data.site.favicon %}
+
+{% if page.cover %}
+{% assign og_image = page.cover %}
+{% else %}
+{% assign og_image = site.data.site.cover %}
+{% endif %}
+
+{% if page.description %}
+{% assign og_description = page.description %}
+{% else %}
+{% assign og_description = site.data.site.description %}
+{% endif %}
+
+<!-- 把準備好的 og 素材套到 meta 標籤中 -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ og_url }}" />
+
+  <meta name="description" content="{{ og_description }}" />
+  <meta property="og:description" content="{{ og_description}}" /> 
+  <meta name="twitter:description" content="{{ og_description }}"/>
+
+  <meta property="og:image" content="{{ og_image }}" /> 
+  <meta name="twitter:image:src" content="{{ og_image }}" />
+
+  <meta property="og:title" content="{{ og_title }} | {{ sitename }}" />
+  <meta name="twitter:title" content="{{ og_title }} | {{ sitename }}" />
+  <title>{{ og_title }} | {{ sitename }}</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{ og_favicon }}" />
+
+<!-- 套上 css -->
+
+  <link rel="stylesheet" href="assets/vendors/semantic/semantic.min.css"/>
+
+  <link rel="stylesheet" href="assets/global.css"/>
+
+  {% if page.head %}
+    {% include {{ page.head }} %}
+  {% endif %}
+
+</head>
+<body>
+
+  <nav class="ui right inverted vertical menu sidebar">
+  {% include sidebar.html %}
+  </nav>
+
+  <div class="pusher">
+  {{ content }}
+  </div>
+
+  <script src="assets/vendors/jquery-3.2.1.min.js"></script>
+  <script src="assets/vendors/semantic/semantic.min.js"></script>
+  <script src="assets/global.js"></script>
+
+  {% if page.footer %}
+    {% include {{ page.footer }} %}
+  {% endif %}
+
+  {% include ga.html %}
+
+</body>
+</html>
