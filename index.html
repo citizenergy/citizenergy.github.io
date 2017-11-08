@@ -6,31 +6,96 @@ title: 歡迎
 <main id="homepage">
 
 <header style="background-color: #ebf9f7;">
-<div class="ui container">
-  <div style="background: url('assets/images/header.png') no-repeat center bottom; background-size: cover; padding: 2rem; min-height: 10rem;">
-    <div class="ui image" style="display: block; text-align: left;">
-        <img style="height: 2.5rem;" src="{{ site.data.owner.logo.icon }}" />
-    </div>
+  <div class="ui container">
+    <div style="background: url('assets/images/header.png') no-repeat center bottom; background-size: cover; padding: 2rem 1rem; min-height: 10rem;">
 
-    <div class="ui doubling grid">
-      <div class="nine wide right aligned column">
-        <div style="text-align: right; padding: 2rem 0 3rem 0;">
-          <div style="display: inline-block; text-align: center;">
-        <p style="font-weight: bold; font-size: 1.5rem; line-height: 1.5em; color: #034900">再生的能源 <i class="olive leaf icon"></i> 需要地方<br />地方的能源 <i class="olive leaf icon"></i> 需要你</p>
+      <div class="sidebar button" style="float: right;">
+        <i class="teal icon sidebar" style="margin: 0;"></i>
+      </div>
+
+      <div style="text-align: left;">
+          <img style="height: 1.5rem;" src="{{ site.data.owner.logo.icon }}" />
+          <div style="position: relative; top: -0.4rem; display: inline-block;">民間能源轉型推動聯盟</div>
+      </div>
+
+      <div class="ui stackable grid">
+        <div class="nine wide right aligned column">
+          <div style="text-align: right; padding: 3rem 0 2rem 0;">
+            <div style="display: inline-block; text-align: center; color: #034900; font-size: 1.5rem;"/ >
+              <p style="margin-bottom: 0.5rem;">
+                <span class="inline block">
+                  再生的能源
+                </span>
+                <i class="olive leaf icon"></i>
+                <span class="inline block">
+                  需要地方
+                </span>
+              </p>
+              <p>
+                <span class="inline block">
+                  地方的能源
+                </span>
+                <i class="olive leaf icon"></i>
+                <span class="inline block">
+                  需要你
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
-</div>
 </header>
 
-<section>
-  <div class="ui container">
-    <div class="ui basic teal segment" style="background-color: #fff;"></div>
+<section class="ui basic teal section segment" style="background-color: #fff;">
+  <div class="ui container" style="padding: 1rem;">
+    <div class="ui two column stackable grid">
+
+      <div class="column">
+        <div style="padding: 1rem 0;">
+        {% for p in site.data.homepage.about %}
+          <p>
+            {{ p }}
+          </p>
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="ui image">
+          <img src="assets/images/20170721-056.jpg">
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<section class="ui basic teal section segment" style="background-color: #fdf9e5;">
+  <div class="ui center aligned container" style="padding: 2rem 1rem;">
+    <div class="ui two column divided stackable grid">
 
+      {% for i in site.data.homepage.project %}
+      <div class="column">
+        <h2 class="ui medium icon header">
+          <i class="circular icon {{ i.icon }}"></i>
+          {{ i.name }}
+        </h2>
+        <p>{{ i.description }}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<section class="ui basic teal section segment" style="">
+  <div class="ui center aligned container" style="padding: 2rem 1rem;">
+
+
+  </div>
+</section>
 
 </main>
