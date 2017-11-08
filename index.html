@@ -21,7 +21,7 @@ title: 歡迎
       <div class="ui stackable grid">
         <div class="nine wide right aligned column">
           <div style="padding: 3rem 0 2rem 0;">
-            <div style="display: inline-block; text-align: center; color: #034900; font-size: 1.5rem; background-color: rgba(255,255,255,0.7); padding: 1rem 2rem; margin: 0 -3rem -2rem -1rem; border-radius: 0.5rem;"/ >
+            <div style="display: inline-block; text-align: center; color: #034900; font-size: 1.5rem; background-color: rgba(255,255,255,0.5); padding: 1rem 2rem; margin: 0 -3rem -2rem -1rem; border-radius: 0.5rem;"/ >
               <p style="margin-bottom: 0.5rem;">
                 <span class="inline block">
                   再生的能源
@@ -73,27 +73,39 @@ title: 歡迎
   </div>
 </section>
 
-<section class="ui basic teal section segment" style="background-color: #fdf9e5;">
+<section class="ui basic olive inverted section segment" style="background-color: #fdf9e5;">
   <div class="ui center aligned container" style="padding: 2rem 1rem;">
-    <div class="ui two column divided stackable grid">
+    <div class="ui two fluid raised cards">
 
       {% for i in site.data.homepage.project %}
-      <div class="column">
-        <h2 class="ui medium icon header">
-          <i class="circular icon {{ i.icon }}"></i>
-          {{ i.name }}
-        </h2>
-        {% for p in i.description %}
-        <p>{{ p }}</p>
-        {% endfor %}
-        <div class="ui celled link list">
-          {% for it in i.link %}
-          <a class="item" href="{{ it.url }}">
-            <i class="icon {{ it.icon }}"></i>
-            {{ it.title }}
-          </a>
-          {% endfor %}
+      <div class="card">
+
+        <div class="image" style="padding: 1rem 0;">
+          <i class="huge circular icon {{ i.icon }}" style="background-color: #fff;"></i>
         </div>
+
+        <div class="content">
+          <h2 class="header">
+            {{ i.name }}
+          </h2>
+          <div class="description">
+            {% for p in i.description %}
+            <p>{{ p }}</p>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="extra content">
+          <div class="ui horizontal list">
+            {% for it in i.link %}
+            <a class="item" href="{{ it.url }}">
+              <i class="icon {{ it.icon }}"></i>
+              {{ it.title }}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+
       </div>
       {% endfor %}
 
@@ -101,13 +113,11 @@ title: 歡迎
   </div>
 </section>
 
-<section id="news" class="ui basic teal section segment" style="background-color: #fff;">
+<section id="news" class="ui basic section segment" style="background-color: #fff;">
   <div class="ui container" style="padding: 2rem 1rem;">
 
-    <div class="ui two column divided stackable grid">
-    {% for i in site.data.homepage.news %}
-    <div class="column">
       <div class="ui divided items">
+    {% for i in site.data.homepage.news %}
         <div class="item">
           <div class="image">
             <img src="{{ i.cover }}">
@@ -134,15 +144,13 @@ title: 歡迎
             </div>
           </div>
         </div>
-      </div>
-    </div>
     {% endfor %}
-    </div>
+      </div>
 
   </div>
 </section>
 
-<section class="ui basic teal section segment">
+<section class="ui basic olive section segment">
   <div class="ui center aligned container" style="padding: 0 1rem 2rem 1rem;">
     <div class="ui large image">
       <img src="{{ site.data.owner.logo.horizontal }}">
