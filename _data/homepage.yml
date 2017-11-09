@@ -7,7 +7,8 @@ project:
     description: 
       - 我們推動縣市能源政策評比，提供地方政府規劃方向建議與相關社會資源，協助各縣市制定更完整妥善的節能政策，為日後能源轉型的推動奠定更穩固的基礎。
     cover: 
-    icon: teal checkmark
+    icon: checkmark
+    color: teal
     link:
       - title: 下載 2015 年報告
         url: 
@@ -19,11 +20,13 @@ project:
     description: 
       - 我們打造有趣的網頁小遊戲，吸引民眾關心自己居住的地方，同時協助縣市政府向民眾傳遞節能政策的正確資訊，為日後能源轉型的公民參與奠定更深厚的基礎。
     cover: 
-    icon: yellow map pin
-    link:
-      - title: 前往小測驗
+    icon: map pin
+    color: yellow
+    button:
+      - title: 開始測驗
         url: 
-        icon: right arrow
+        icon: right chevron
+    link:
 news:
   - title: 全台縣市拚節能，民間評比結果大公開
     url: https://www.cet-taiwan.org/node/2323

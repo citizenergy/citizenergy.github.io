@@ -9,9 +9,11 @@ title: 歡迎
   <div class="ui container">
     <div id="background">
 
+      <!--
       <div class="sidebar button">
         <i class="teal icon sidebar" style="margin: 0;"></i>
       </div>
+    -->
 
       <div style="text-align: left;">
           <img style="height: 1.5rem;" src="{{ site.data.owner.logo.icon }}" />
@@ -20,7 +22,7 @@ title: 歡迎
 
       <div class="ui stackable grid">
         <div class="eight wide right aligned column">
-          <div style="margin: 2rem -1rem 2rem 0;">
+          <div style="margin: 1rem -1rem 1rem 0;">
             <div id="slogan">
               <p style="margin-bottom: 0.5rem;">
                 <span class="inline block">
@@ -40,6 +42,10 @@ title: 歡迎
                   需要你
                 </span>
               </p>
+              <a class="ui icon right labeled teal basic button" href="">
+                <i class="icon right chevron"></i>
+                開始測驗
+              </a>
             </div>
           </div>
         </div>
@@ -63,9 +69,18 @@ title: 歡迎
         </div>
       </div>
 
-      <div class="column">
+      <div class="center aligned column">
         <div class="ui image">
           <img src="assets/images/20170721-056.jpg">
+          <div style="padding: 0 2rem;">
+            <figcaption>能源轉型包含「廢核除煤、能源效率、綠色能源、智慧管理、經濟共享、民主治理」六大面向</figcaption>
+            <cite>
+              圖片來源：
+              <a href="https://www.cet-taiwan.org/publication/issue/content/3050" target="_blank">
+                地球公民基金會
+              </a>
+            </cite>
+          </div>
         </div>
       </div>
 
@@ -75,13 +90,13 @@ title: 歡迎
 
 <section class="ui basic olive section segment" style="background-color: #fdf9e5;">
   <div class="ui center aligned container" style="padding: 2rem 1rem;">
-    <div class="ui two fluid stackable raised cards">
+    <div class="ui two fluid stackable cards">
 
       {% for i in site.data.homepage.project %}
-      <div class="card">
+      <div class="{{ i.color }} card">
 
         <div class="image" style="padding: 1rem 0;">
-          <i class="huge circular icon {{ i.icon }}" style="background-color: #fff;"></i>
+          <i class="huge circular icon {{ i.color }} {{ i.icon }}" style="background-color: #fff;"></i>
         </div>
 
         <div class="content">
@@ -96,7 +111,9 @@ title: 歡迎
         </div>
 
         <div class="extra content">
-          <div class="ui horizontal list">
+
+          {% if i.link %}
+          <div class="ui relaxed list">
             {% for it in i.link %}
             <a class="item" href="{{ it.url }}">
               <i class="icon {{ it.icon }}"></i>
@@ -104,6 +121,17 @@ title: 歡迎
             </a>
             {% endfor %}
           </div>
+          {% endif %}
+
+          {% if i.button %}
+            {% for it in i.button %}
+            <a class="ui {{ i.color }} basic icon right labeled button" href="{{ it.url }}">
+              <i class="icon {{ it.icon }}"></i>
+              {{ it.title }}
+            </a>
+            {% endfor %}
+          {% endif %}
+
         </div>
 
       </div>
@@ -116,7 +144,7 @@ title: 歡迎
 <section id="news" class="ui basic olive section segment" style="background-color: #fff;">
   <div class="ui container" style="padding: 2rem 1rem;">
 
-      <div class="ui divided items">
+      <div class="ui divided relaxed items">
     {% for i in site.data.homepage.news %}
         <div class="item">
           <div class="image">
@@ -138,7 +166,7 @@ title: 歡迎
             </div>
             <div class="extra">
               <a href="{{ i.url }}" target="_blank">
-                閱讀全文
+                前往閱讀
                 <i class="icon right chevron"></i>
               </a>
             </div>
