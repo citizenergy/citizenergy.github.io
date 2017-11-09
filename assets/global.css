@@ -15,6 +15,7 @@ html, body {
   padding: 0.3em 0.5em;
   border-radius: 0.5em;
   opacity: 0.7;
+  float: right;
 }
 
 .sidebar.button:hover {
@@ -31,14 +32,62 @@ html, body {
   padding: 1rem 0;
 }
 
+#header #background {
+  background: url('../assets/images/header.png') no-repeat center bottom;
+  background-size: cover;
+  padding: 2rem 1rem;
+  min-height: 10rem;
+}
+
+#header #slogan {
+  display: inline-block;
+  text-align: center;
+  color: #034900;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 0 -3rem -2rem -1rem;
+}
+
 @media only screen and (max-width: 767px) {
 
 #header .right.aligned.column {
   text-align: left;
 }
 
+#header #slogan {
+  padding: 1rem;
+  text-align: left;
+}
+
+
 #news .ui.items .item {
   text-align: center;
 }
 
 }
+
+@media only screen and (max-width: 639px) {
+
+#header #background {
+  background-size: 80%;
+  background-position: right bottom;
+}
+
+}
+
+@media only screen and (max-width: 539px) {
+
+#header #background {
+  background-size: 70%;
+}
+
+}
+
+@media only screen and (max-width: 479px) {
+
+#header #background {
+  background-size: 55%;
+}
+
+}
+
