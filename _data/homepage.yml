@@ -8,7 +8,7 @@ project:
       - 我們推動縣市能源政策評比，提供地方政府規劃方向建議與相關社會資源，協助各縣市制定更完整妥善的節能政策，為日後能源轉型的推動奠定更穩固的基礎。
     cover: 
     icon: checkmark
-    color: teal
+    color: green
     link:
       - title: 下載 2015 年報告
         url: 
@@ -21,7 +21,7 @@ project:
       - 我們打造有趣的網頁小遊戲，吸引民眾關心自己居住的地方，同時協助縣市政府向民眾傳遞節能政策的正確資訊，為日後能源轉型的公民參與奠定更深厚的基礎。
     cover: 
     icon: map pin
-    color: yellow
+    color: teal
     button:
       - title: 開始測驗
         url: 
