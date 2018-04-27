@@ -5,32 +5,202 @@ title: 歡迎
 
 <main id="homepage">
 
-<header style="background-color: #ebf9f7;">
-<div class="ui container">
-  <div style="background: url('/assets/images/header.png') no-repeat center bottom; background-size: cover; padding: 2rem; min-height: 10rem;">
-    <div class="ui image" style="display: block; text-align: left;">
-        <img style="height: 2.5rem;" src="{{ site.data.owner.logo.icon }}" />
-    </div>
+<header id="header" style="background-color: #ebf9f7;">
+  <div class="ui container">
+    <div id="background">
 
-    <div class="ui doubling grid">
-      <div class="nine wide right aligned column">
-        <div style="text-align: right; padding: 2rem 0 3rem 0;">
-          <div style="display: inline-block; text-align: center;">
-        <p style="font-weight: bold; font-size: 1.5rem; line-height: 1.5em; color: #034900">再生的能源 <i class="olive leaf icon"></i> 需要地方<br />地方的能源 <i class="olive leaf icon"></i> 需要你</p>
+      <!--
+      <div class="sidebar button">
+        <i class="teal icon sidebar" style="margin: 0;"></i>
+      </div>
+    -->
+
+      <div style="text-align: left;">
+          <img style="height: 1.5rem;" src="{{ site.data.owner.logo.icon }}" />
+          <div style="position: relative; top: -0.4rem; display: inline-block;">民間能源轉型推動聯盟</div>
+      </div>
+
+      <div class="ui stackable grid">
+        <div class="eight wide right aligned column">
+          <div style="margin: 1rem -1rem 1rem 0;">
+            <div id="slogan">
+              <p style="margin-bottom: 0.5rem;">
+                <span class="inline block">
+                  再生的能源
+                </span>
+                <i class="olive leaf icon"></i>
+                <span class="inline block">
+                  需要地方
+                </span>
+              </p>
+              <p>
+                <span class="inline block">
+                  地方的能源
+                </span>
+                <i class="olive leaf icon"></i>
+                <span class="inline block">
+                  需要你
+                </span>
+              </p>
+              <a class="ui icon right labeled teal basic button" href="">
+                <i class="icon right chevron"></i>
+                開始測驗
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
-</div>
 </header>
 
-<section>
-  <div class="ui container">
-    <div class="ui basic teal segment" style="background-color: #fff;"></div>
+<section class="ui basic teal section segment" style="background-color: #fff;">
+  <div class="ui container" style="padding: 1rem;">
+    <div class="ui two column stackable grid">
+
+      <div class="column">
+        <div style="padding: 1rem 0;">
+        {% for p in site.data.homepage.about %}
+          <p>
+            {{ p }}
+          </p>
+        {% endfor %}
+        </div>
+      </div>
+
+      <div class="center aligned column">
+        <div class="ui image">
+          <img src="assets/images/20170721-056.jpg">
+          <div style="padding: 0 2rem;">
+            <figcaption>能源轉型包含「廢核除煤、能源效率、綠色能源、智慧管理、經濟共享、民主治理」六大面向</figcaption>
+            <cite>
+              圖片來源：
+              <a href="https://www.cet-taiwan.org/publication/issue/content/3050" target="_blank">
+                地球公民基金會
+              </a>
+            </cite>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<section class="ui basic yellow section segment" style="background-color: #fdf9e5;">
+  <div class="ui center aligned container" style="padding: 2rem 1rem;">
+    <div class="ui two fluid stackable cards">
 
+      {% for i in site.data.homepage.project %}
+      <div class="{{ i.color }} card">
+
+        <div class="image" style="padding: 1rem 0;">
+          <i class="huge circular icon {{ i.color }} {{ i.icon }}" style="background-color: #fff;"></i>
+        </div>
+
+        <div class="content">
+          <h2 class="header">
+            {{ i.name }}
+          </h2>
+          <div class="description">
+            {% for p in i.description %}
+            <p>{{ p }}</p>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="extra content">
+
+          {% if i.link %}
+          <div class="ui relaxed list">
+            {% for it in i.link %}
+            <a class="item" href="{{ it.url }}">
+              <i class="icon {{ it.icon }}"></i>
+              {{ it.title }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if i.button %}
+            {% for it in i.button %}
+            <a class="ui {{ i.color }} basic icon right labeled button" href="{{ it.url }}">
+              <i class="icon {{ it.icon }}"></i>
+              {{ it.title }}
+            </a>
+            {% endfor %}
+          {% endif %}
+
+        </div>
+
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<section id="news" class="ui basic yellow section segment" style="background-color: #fff;">
+  <div class="ui container" style="padding: 2rem 1rem;">
+
+      <div class="ui divided relaxed items">
+    {% for i in site.data.homepage.news %}
+        <div class="item">
+          <div class="image">
+            <img src="{{ i.cover }}">
+          </div>
+          <div class="content">
+            <a class="header" href="{{ i.url }}" target="_blank">
+              {{ i.title }}
+            </a>
+            <div class="meta">
+              {{ i.date }}
+            </div>
+            <div class="description">
+              {% for p in i.description %}
+              <p>
+                {{ p }}
+              </p>
+              {% endfor %}
+            </div>
+            <div class="extra">
+              <a href="{{ i.url }}" target="_blank">
+                前往閱讀
+                <i class="icon right chevron"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+      </div>
+
+  </div>
+</section>
+
+<section class="ui basic teal section segment">
+  <div class="ui center aligned container" style="padding: 0 1rem 2rem 1rem;">
+    <div class="ui large image">
+      <img src="{{ site.data.owner.logo.horizontal }}">
+    </div>
+    <div class="ui relaxed horizontal link list">
+      {% for m in site.data.about.member %}
+      <a class="item" href="{{ m.url }}" target="_blank">
+        <i class="olive leaf icon"></i>
+        {{ m.name }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<footer class="ui basic teal section segment" style="background-color: #ebf9f7;">
+  <div class="ui center aligned container">
+    <a href="{{ site.data.site.code.source }}" target="_blank">
+      <i class="icon code"></i>
+      Source Code
+    </a>
+  </div>
+</footer>
 
 </main>

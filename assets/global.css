@@ -6,6 +6,87 @@ html, body {
 
 .ui.container {
   width: 100%;
-  max-width: 1200px!important;
+  max-width: 960px!important;
   margin: 0 auto!important;
 }
+
+.sidebar.button {
+  margin: -0.3em 0;
+  padding: 0.3em 0.5em;
+  border-radius: 0.5em;
+  opacity: 0.7;
+  float: right;
+}
+
+.sidebar.button:hover {
+  opacity: 1;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.inline.block {
+  display: inline-block;
+}
+
+.ui.section.segment {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+#homepage #header #background {
+  background: url('../assets/images/header.png') no-repeat center bottom;
+  background-size: auto 140%;
+  padding: 2rem 1rem;
+  min-height: 10rem;
+}
+
+#homepage #header #slogan {
+  display: inline-block;
+  text-align: center;
+  color: #034900;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 0 -3rem -2rem -1rem;
+}
+
+figcaption, cite {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  line-height: 1.5em;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #00b5ad;
+  opacity: 1;
+}
+
+#homepage .ui.card>.extra .ui.list a:hover,
+#homepage .ui.cards>.card>.extra .ui.list a:hover,
+#homepage .ui.items>.item>.content>a.header:hover {
+  color: #00b5ad;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+
+#homepage #header .right.aligned.column {
+  text-align: left;
+}
+
+#homepage #header #slogan {
+  padding: 1rem;
+}
+
+#homepage #header #background {
+  background-position: left -14rem bottom;
+}
+
+#homepage #news .ui.items .item {
+  text-align: center;
+}
+
+}
+

@@ -13,10 +13,10 @@ contact:
   twitter: 
   website: 
 logo: 
-  icon: /assets/images/logo-graphic-no-border.png
+  icon: assets/images/logo-graphic-no-border.png
   vertical: 
-  horizontal: /assets/images/logo-horizontal-fulltext-white.png
-  square: /assets/images/logo-square-text-white.png
+  horizontal: assets/images/logo-horizontal-fulltext-white.png
+  square: assets/images/logo-square-text-white.png
   black:
-    horizontal: /assets/images/logo-horizontal-fulltext-black.png
-    square: /assets/images/logo-square-text-black.png
+    horizontal: assets/images/logo-horizontal-fulltext-black.png
+    square: assets/images/logo-square-text-black.png
