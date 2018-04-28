@@ -24,7 +24,7 @@ project:
     color: teal
     button:
       - title: 開始測驗
-        url: 
+        url: /game
         icon: right chevron
     link:
 news:
