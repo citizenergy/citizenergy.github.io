@@ -1,0 +1,59 @@
+---
+layout: global
+---
+
+{% assign county = site.data.geo.county[page.county_id] %}
+
+<style>
+  #county path[name="{{ page.county_id }}"] {
+    fill: #40bfbf;
+  }
+</style>
+
+<main id="county">
+  <nav id="nav">
+    <div class="ui container">
+    <div class="ui basic segment" style="text-align: left; margin-bottom: 0; line-height: 0;">
+      <a href="/">
+        <img style="height: 1.5rem; margin-right: 0.5em;" src="{{ site.data.owner.logo.icon }}" />
+        <span style="position: relative; top: -0.4rem; display: inline-block;">民間能源轉型推動聯盟
+      </span>
+      </a>
+    </div>
+    </div>
+  </nav>
+  <header id="header">
+    <div class="ui container" style="position: relative;">
+    <div class="background">
+      <svg className='Map' version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='255.121px' height='430.531px' viewBox='0 {{ county.v_offset }} 255.121 430.531'>
+        This svg is derivated from Eason Hsieh's work at https://codepen.io/hahamimidido/pen/wGRrza
+        {% for county in site.data.geo.county %}
+          <path name='{{ county[0] }}' d='{{ county[1].path }}'/>
+        {% endfor %}
+      </svg>
+    </div>
+    <div class="ui basic very padded segment" style="margin: 0">
+      <h2 class="ui header">
+        {{ county.name }}
+      </h2>
+    </div>
+    </div>
+  </header>
+  <article class="ui basic teal segment" style="margin: 0;">
+    <hr class="ui hidden divider" />
+    <div class="ui container">
+    {% for policy in county.policy %}
+    <div class="ui stacked padded segment">
+      <h4 class="ui center aligned icon header">
+        <i class="icon green circular check"></i>
+        {{ policy.title }}
+      </h4>
+      <p>
+        {{ policy.description }}
+      </p>
+    </div>
+    {% endfor %}
+    </div>
+    <hr class="ui hidden divider" />
+  </article>
+</main>

@@ -29,9 +29,9 @@ east:
   _county:
     - hualien_county
     - taitung_county
-island:
-  name: 離島
-  _county:
-    - penghu_county
-    - kinmen_county
-    - lienchiang_county
+# island:
+#   name: 離島
+#   _county:
+#     - penghu_county
+#     - kinmen_county
+#     - lienchiang_county

@@ -1,13 +1,24 @@
 html, body {
+  margin: 0;
+  padding: 0;
   font-size: 18px;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'PingFang TC', 'Heiti TC', '微軟正黑體', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: #fdf9e5;
   background-color: #f9f9f9;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 .ui.container {
-  width: 100%;
   max-width: 960px!important;
-  margin: 0 auto!important;
 }
 
 .sidebar.button {
@@ -35,7 +46,7 @@ html, body {
 #homepage #header #background {
   background: url('../assets/images/header.png') no-repeat center bottom;
   background-size: auto 140%;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   min-height: 10rem;
 }
 
@@ -68,6 +79,35 @@ a:hover {
 #homepage .ui.items>.item>.content>a.header:hover {
   color: #00b5ad;
   opacity: 1;
+}
+
+#county #nav {
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+  position: relative;
+  z-index: 10;
+}
+
+#county #header {
+  background: repeating-linear-gradient(
+    -10deg,
+    rgba(153,255,255,.2),
+    #fff,
+    rgba(153,255,255,.1)
+  );
+}
+
+#county #header .background {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  overflow: hidden;
+}
+
+#county path {
+  fill: rgba(64,191,191,.2);
+  stroke-width: 1px;
+  stroke: #fff;
 }
 
 @media only screen and (max-width: 767px) {
