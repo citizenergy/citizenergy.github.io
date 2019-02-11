@@ -7,7 +7,11 @@
 {% assign sitename = site.data.site.name %}
 {% assign og_url = page.url %}
 {% assign base_url = "" %}
-{% assign og_title = page.title %}
+{% if page.title %}
+  {% assign og_title = page.title %}
+{% else %}
+  {% assign og_title = site.data.geo.county[page.county_id].title %}
+{% endif %}
 {% assign og_favicon = site.data.site.favicon %}
 
 {% if page.cover %}
